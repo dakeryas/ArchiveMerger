@@ -5,13 +5,14 @@
 #include "InputIterator.hpp"
 #include "OutputIterator.hpp"
 #include "Cosmogenic/CandidateTree.hpp"
+#include "Utility.hpp"
 
 namespace bpo = boost::program_options;
 namespace bfs = boost::filesystem;
 namespace CsHt = CosmogenicHunter;
 
 namespace ArchiveMerger{
-
+  
   template <class T, class K>
   void merge(const boost::filesystem::path& targetPath, const std::regex& regex, const boost::filesystem::path& outputPath){
 
@@ -27,7 +28,7 @@ namespace ArchiveMerger{
 	std::ifstream inputStream(directoryIterator->path().string(), std::ios::binary);
 	cereal::BinaryInputArchive inputArchive(inputStream);
 	
-	std::copy(cereal::Archive::InputIterator<CsHt::CandidateTree<T,K>>{inputArchive}, cereal::Archive::InputIterator<CsHt::CandidateTree<T,K>>{}, outputIterator);
+	Utility::naiveCopy(cereal::Archive::InputIterator<CsHt::CandidateTree<T,K>>{inputArchive}, cereal::Archive::InputIterator<CsHt::CandidateTree<T,K>>{}, outputIterator);
 
       }
       
