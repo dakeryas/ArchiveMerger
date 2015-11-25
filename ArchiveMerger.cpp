@@ -8,7 +8,6 @@
 #include "Utility.hpp"
 
 namespace bpo = boost::program_options;
-namespace bfs = boost::filesystem;
 namespace CsHt = CosmogenicHunter;
 
 namespace ArchiveMerger{
@@ -21,7 +20,7 @@ namespace ArchiveMerger{
     
     cereal::Archive::OutputIterator<CsHt::CandidateTree<T,K>> outputIterator(outputArchive);
     
-    for(auto directoryIterator = bfs::directory_iterator{targetPath}; directoryIterator != bfs::directory_iterator{}; ++directoryIterator){
+    for(auto directoryIterator = boost::filesystem::directory_iterator{targetPath}; directoryIterator != boost::filesystem::directory_iterator{}; ++directoryIterator){
     
       if(std::regex_search(directoryIterator->path().string(), regex)){
 	
