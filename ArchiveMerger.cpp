@@ -76,7 +76,7 @@ int main(int argc, char* argv[]){
   
   if(!boost::filesystem::is_directory(targetPath)){
     
-    std::cout<<"Error: "<<targetPath<<" is not a regular file"<<std::endl;
+    std::cout<<"Error: "<<targetPath<<" is not a directory"<<std::endl;
     return 1;
     
   }
