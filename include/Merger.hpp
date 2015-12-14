@@ -60,7 +60,7 @@ namespace ArchiveMerger{
     cereal::BinaryOutputArchive outputArchive(outputStream);
     
     cereal::Archive::OutputIterator<DataType> outputIterator(outputArchive);
-    std::for_each(boost::filesystem::directory_iterator{targetPath}, boost::filesystem::directory_iterator{}, [&](const auto& filePath){processFile(filePath, outputIterator);});
+    std::for_each(boost::filesystem::directory_iterator{targetPath}, boost::filesystem::directory_iterator{}, [&](const auto& filePath){this->processFile(filePath, outputIterator);});
     
   }
   
