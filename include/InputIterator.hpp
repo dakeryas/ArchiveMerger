@@ -1,5 +1,5 @@
-#ifndef INPUT_ITERATOR_H
-#define INPUT_ITERATOR_H
+#ifndef CEREAL_ARCHIVE_INPUT_ITERATOR_H
+#define CEREAL_ARCHIVE_INPUT_ITERATOR_H
 
 #include "cereal/archives/binary.hpp"
 

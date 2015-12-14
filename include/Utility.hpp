@@ -1,5 +1,5 @@
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef UTILITY_UTILITY_H
+#define UTILITY_UTILITY_H
 
 #include "cereal/archives/binary.hpp"
 

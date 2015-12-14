@@ -1,5 +1,5 @@
-#ifndef OUTPUT_ITERATOR_H
-#define OUTPUT_ITERATOR_H
+#ifndef CEREAL_ARCHIVE_OUTPUT_ITERATOR_H
+#define CEREAL_ARCHIVE_OUTPUT_ITERATOR_H
 
 #include "cereal/archives/binary.hpp"
 
