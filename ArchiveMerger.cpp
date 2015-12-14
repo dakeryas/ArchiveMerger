@@ -22,7 +22,7 @@ namespace ArchiveMerger{
     
     for(auto directoryIterator = boost::filesystem::directory_iterator{targetPath}; directoryIterator != boost::filesystem::directory_iterator{}; ++directoryIterator){
     
-      if(std::regex_search(directoryIterator->path().string(), regex)){
+      if(std::regex_search(directoryIterator->path().filename().string(), regex)){
 	
 	std::ifstream inputStream(directoryIterator->path().string(), std::ios::binary);
 	cereal::BinaryInputArchive inputArchive(inputStream);
