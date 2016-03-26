@@ -24,7 +24,7 @@ int main(int argc, char* argv[]){
   bpo::options_description optionDescription("ArchiveMerger usage");
   optionDescription.add_options()
   ("help,h", "Display this help message")
-  ("target,t", bpo::value<boost::filesystem::path>(&targetPath)->required(), "Path of the directory containing the archives to merge")
+  ("target", bpo::value<boost::filesystem::path>(&targetPath)->required(), "Path of the directory containing the archives to merge")
   ("regex,r", bpo::value<std::string>(&regexString)->default_value(".*\\.bin"), "Regular expression to select files in 'target'")
   ("output,o", bpo::value<boost::filesystem::path>(&outputPath)->required(), "Output file where to save the archive")
   ("clean", "Remove the merged files");
